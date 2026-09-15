@@ -1,1 +1,1606 @@
+```css
+/* =========================================================
+   LABURNUM CARAVAN PARKS
+   Whelhaus Concept
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+  --cream: #f5f1e8;
+  --cream-light: #fbf9f4;
+  --white: #ffffff;
+
+  --green: #173f35;
+  --green-dark: #0f3029;
+  --green-light: #31594d;
+
+  --navy: #102d36;
+  --text: #24332f;
+  --text-soft: #68736f;
+
+  --sand: #d8c5a7;
+  --border: rgba(23, 63, 53, 0.15);
+
+  --shadow-sm:
+    0 10px 30px rgba(15, 48, 41, 0.08);
+
+  --shadow-md:
+    0 24px 60px rgba(15, 48, 41, 0.14);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+
+  --container: 1240px;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--font-sans);
+
+  color: var(--text);
+  background: var(--cream-light);
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--font-sans);
+}
+
+img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+
+  font-family: var(--font-serif);
+  font-weight: 500;
+
+  color: var(--navy);
+
+  line-height: 1.08;
+}
+
+
+/* =========================================================
+   3. LAYOUT
+   ========================================================= */
+
+.container {
+  width: min(calc(100% - 48px), var(--container));
+
+  margin-inline: auto;
+}
+
+.narrow {
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow {
+  margin-bottom: 18px;
+
+  font-size: 0.74rem;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.eyebrow.dark {
+  color: var(--green);
+}
+
+h1 {
+  margin-bottom: 26px;
+
+  font-size: clamp(4rem, 7vw, 7.5rem);
+
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  margin-bottom: 25px;
+
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.section-lead {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  font-size: 1.08rem;
+
+  color: var(--text-soft);
+}
+
+
+/* =========================================================
+   5. BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  min-height: 52px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 25px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: var(--white);
+
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.btn-primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+}
+
+.btn-light {
+  color: var(--green-dark);
+
+  background: var(--cream-light);
+  border-color: var(--cream-light);
+}
+
+.btn-light:hover {
+  background: var(--white);
+}
+
+.btn-outline {
+  color: var(--green);
+
+  background: transparent;
+
+  border-color: var(--green);
+}
+
+.btn-outline:hover {
+  color: var(--white);
+
+  background: var(--green);
+}
+
+.btn-transparent {
+  color: var(--white);
+
+  background: transparent;
+
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-transparent:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  border-color: var(--white);
+}
+
+
+/* =========================================================
+   6. HEADER
+   ========================================================= */
+
+.site-header {
+  position: absolute;
+  z-index: 100;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  color: var(--white);
+}
+
+.header-inner {
+  display: flex;
+
+  min-height: 105px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/* BRAND */
+
+.brand {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.brand-mark {
+  display: flex;
+
+  width: 45px;
+  height: 45px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid currentColor;
+  border-radius: 50%;
+
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+}
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.brand-text strong {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+}
+
+.brand-text span {
+  margin-top: 7px;
+
+  font-size: 0.65rem;
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+.main-nav > a:not(.btn) {
+  position: relative;
+
+  padding: 12px 0;
+
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.main-nav > a:not(.btn)::after {
+  position: absolute;
+
+  right: 0;
+  bottom: 4px;
+  left: 0;
+
+  height: 1px;
+
+  content: "";
+
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+
+  transition: transform 0.25s ease;
+}
+
+.main-nav > a:not(.btn):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-cta {
+  margin-left: 8px;
+}
+
+.nav-toggle {
+  display: none;
+
+  padding: 8px;
+
+  cursor: pointer;
+
+  background: transparent;
+}
+
+.nav-toggle span {
+  display: block;
+
+  width: 27px;
+  height: 2px;
+
+  margin: 6px 0;
+
+  background: var(--white);
+}
+
+
+/* =========================================================
+   7. HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  display: flex;
+
+  min-height: 780px;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  color: var(--white);
+
+  background:
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=90")
+    center 55% / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 31, 31, 0.68) 0%,
+      rgba(9, 31, 31, 0.42) 43%,
+      rgba(9, 31, 31, 0.12) 75%,
+      rgba(9, 31, 31, 0.08) 100%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 100px;
+}
+
+.hero h1 {
+  max-width: 720px;
+
+  color: var(--white);
+}
+
+.hero-intro {
+  max-width: 600px;
+
+  margin-bottom: 36px;
+
+  font-size: 1.15rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.hero-note {
+  position: absolute;
+  z-index: 3;
+
+  right: max(24px, calc((100vw - var(--container)) / 2));
+  bottom: 48px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding-left: 18px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.hero-note span {
+  margin-bottom: 3px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-note strong {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   8. INTRO
+   ========================================================= */
+
+.intro-section {
+  background: var(--cream-light);
+}
+
+.intro-section h2 {
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   9. PARK CARDS
+   ========================================================= */
+
+.parks-section {
+  padding-bottom: 110px;
+
+  background: var(--cream-light);
+}
+
+.park-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+.park-card {
+  position: relative;
+
+  min-height: 540px;
+
+  overflow: hidden;
+
+  background: var(--green);
+}
+
+.park-card img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.park-card:hover img {
+  transform: scale(1.04);
+}
+
+.park-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(9, 31, 31, 0.05) 15%,
+      rgba(9, 31, 31, 0.78) 100%
+    );
+}
+
+.park-content {
+  position: absolute;
+  z-index: 2;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 50px;
+
+  color: var(--white);
+}
+
+.park-content h3 {
+  margin-bottom: 14px;
+
+  font-size: 3rem;
+
+  color: var(--white);
+}
+
+.park-content p {
+  max-width: 440px;
+
+  margin-bottom: 22px;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.small-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.small-label.dark {
+  color: var(--green);
+}
+
+.text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 3px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.text-link span {
+  transition: transform 0.2s ease;
+}
+
+.text-link:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   10. BENEFITS
+   ========================================================= */
+
+.benefits {
+  padding: 52px 0;
+
+  color: var(--white);
+
+  background: var(--green);
+}
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.benefit {
+  padding: 10px 28px;
+
+  text-align: center;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.benefit:last-child {
+  border-right: 0;
+}
+
+.benefit-icon {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+
+  line-height: 1;
+
+  color: var(--cream);
+}
+
+.benefit h3 {
+  margin-bottom: 8px;
+
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+
+  color: var(--white);
+}
+
+.benefit p {
+  margin: 0;
+
+  font-size: 0.8rem;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   11. MOBILE HOMES
+   ========================================================= */
+
+.homes-section {
+  background: var(--cream);
+}
+
+.split-heading {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  align-items: end;
+
+  gap: 70px;
+
+  margin-bottom: 55px;
+}
+
+.split-heading h2 {
+  margin-bottom: 0;
+}
+
+.split-heading > p {
+  max-width: 480px;
+
+  margin-bottom: 8px;
+
+  color: var(--text-soft);
+}
+
+.featured-home {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  overflow: hidden;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-md);
+}
+
+.home-main-image {
+  min-height: 590px;
+}
+
+.home-main-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.home-details {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 70px 60px;
+}
+
+.home-details h3 {
+  margin-bottom: 18px;
+
+  font-size: 2.7rem;
+}
+
+.home-specs {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0;
+
+  margin-bottom: 32px;
+}
+
+.home-specs span {
+  padding: 0 13px;
+
+  border-right: 1px solid var(--border);
+
+  font-size: 0.76rem;
+
+  color: var(--text-soft);
+}
+
+.home-specs span:first-child {
+  padding-left: 0;
+}
+
+.home-specs span:last-child {
+  border-right: 0;
+}
+
+.home-price {
+  margin-bottom: 0;
+
+  font-family: var(--font-serif);
+  font-size: 3.1rem;
+
+  color: var(--green);
+}
+
+.price-note {
+  margin-bottom: 28px;
+
+  font-size: 0.8rem;
+
+  color: var(--text-soft);
+}
+
+.home-details > p:not(.price-note) {
+  margin-bottom: 32px;
+
+  color: var(--text-soft);
+}
+
+.home-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   12. LIFESTYLE
+   ========================================================= */
+
+.lifestyle-section {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  min-height: 680px;
+
+  background: var(--cream-light);
+}
+
+.lifestyle-image {
+  min-height: 680px;
+}
+
+.lifestyle-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.lifestyle-content {
+  display: flex;
+
+  align-items: center;
+
+  padding: 80px;
+}
+
+.content-inner {
+  max-width: 520px;
+}
+
+.content-inner p:not(.eyebrow) {
+  color: var(--text-soft);
+}
+
+.content-inner .btn {
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   13. EXPLORE WEXFORD
+   ========================================================= */
+
+.explore-section {
+  background: var(--white);
+}
+
+.section-heading {
+  margin-bottom: 55px;
+
+  text-align: center;
+}
+
+.explore-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.explore-card {
+  position: relative;
+
+  min-height: 450px;
+
+  overflow: hidden;
+}
+
+.explore-card::after {
+  position: absolute;
+
+  inset: 0;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(10, 30, 29, 0.72) 100%
+    );
+}
+
+.explore-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.explore-card:hover img {
+  transform: scale(1.04);
+}
+
+.explore-card-content {
+  position: absolute;
+  z-index: 2;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 35px;
+
+  color: var(--white);
+}
+
+.explore-card-content span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 0.67rem;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.explore-card-content h3 {
+  margin: 0;
+
+  color: var(--white);
+}
+
+
+/* =========================================================
+   14. ABOUT
+   ========================================================= */
+
+.about-section {
+  background: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: 100px;
+}
+
+.about-content p:not(.eyebrow) {
+  max-width: 520px;
+
+  color: var(--text-soft);
+}
+
+.about-image {
+  min-height: 570px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 570px;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   15. TESTIMONIAL
+   ========================================================= */
+
+.testimonial-section {
+  padding: 120px 0;
+
+  text-align: center;
+
+  background: var(--green);
+}
+
+.quote-mark {
+  display: block;
+
+  height: 55px;
+
+  font-family: var(--font-serif);
+  font-size: 5rem;
+
+  line-height: 1;
+
+  color: var(--sand);
+}
+
+blockquote {
+  max-width: 900px;
+
+  margin: 20px auto 30px;
+
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+
+  line-height: 1.3;
+
+  color: var(--white);
+}
+
+.testimonial-name {
+  margin: 0;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   16. FINAL CTA
+   ========================================================= */
+
+.final-cta {
+  position: relative;
+
+  display: flex;
+
+  min-height: 650px;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  color: var(--white);
+
+  background:
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=90")
+    center / cover no-repeat;
+}
+
+.final-cta-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(10, 38, 34, 0.64);
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+}
+
+.final-cta h2 {
+  color: var(--white);
+}
+
+.final-cta p:not(.eyebrow) {
+  max-width: 580px;
+
+  margin: 0 auto 32px;
+
+  font-size: 1.05rem;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cta-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+.site-footer {
+  padding: 80px 0 30px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  background: var(--green-dark);
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 80px;
+
+  padding-bottom: 70px;
+}
+
+.footer-logo {
+  margin-bottom: 24px;
+
+  color: var(--white);
+}
+
+.footer-brand p {
+  max-width: 330px;
+
+  font-size: 0.88rem;
+}
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.footer-links h3 {
+  margin-bottom: 12px;
+
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+
+  color: var(--white);
+}
+
+.footer-links a {
+  width: fit-content;
+
+  font-size: 0.86rem;
+
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 0.72rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.whelhaus-credit a {
+  color: var(--white);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================================
+   18. TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .main-nav > a:not(.btn) {
+    font-size: 0.8rem;
+  }
+
+  .nav-cta {
+    padding-inline: 18px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    row-gap: 35px;
+  }
+
+  .benefit {
+    border-right: 0;
+  }
+
+  .featured-home {
+    grid-template-columns: 1fr;
+  }
+
+  .home-main-image {
+    min-height: 520px;
+  }
+
+  .lifestyle-section {
+    grid-template-columns: 1fr;
+  }
+
+  .lifestyle-image {
+    min-height: 600px;
+  }
+
+  .lifestyle-content {
+    padding: 90px 48px;
+  }
+
+}
+
+
+/* =========================================================
+   19. MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .header-inner {
+    min-height: 85px;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 102;
+
+    display: block;
+  }
+
+  .main-nav {
+    position: fixed;
+    z-index: 101;
+
+    top: 0;
+    right: 0;
+
+    display: flex;
+
+    width: min(85%, 400px);
+    height: 100vh;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 5px;
+
+    padding: 115px 35px 40px;
+
+    background: var(--green-dark);
+
+    box-shadow:
+      -20px 0 50px rgba(0, 0, 0, 0.25);
+
+    transform: translateX(105%);
+
+    transition: transform 0.35s ease;
+  }
+
+  .main-nav.nav-open {
+    transform: translateX(0);
+  }
+
+  .main-nav > a:not(.btn) {
+    width: 100%;
+
+    padding: 13px 0;
+
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+  }
+
+  .nav-cta {
+    width: 100%;
+
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+}
+
+
+/* =========================================================
+   20. MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .container {
+    width: min(calc(100% - 36px), var(--container));
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  h1 {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: 720px;
+
+    align-items: flex-end;
+
+    padding-bottom: 90px;
+
+    background-position: 62% center;
+  }
+
+  .hero-content {
+    padding-top: 140px;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8, 29, 29, 0.32) 0%,
+        rgba(8, 29, 29, 0.74) 100%
+      );
+  }
+
+  .hero-intro {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-note {
+    display: none;
+  }
+
+
+  /* PARKS */
+
+  .park-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .park-card {
+    min-height: 500px;
+  }
+
+  .park-content {
+    padding: 35px 28px;
+  }
+
+  .park-content h3 {
+    font-size: 2.5rem;
+  }
+
+
+  /* BENEFITS */
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit {
+    padding: 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .benefit:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* HOMES */
+
+  .split-heading {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+  }
+
+  .home-main-image {
+    min-height: 350px;
+  }
+
+  .home-details {
+    padding: 45px 28px;
+  }
+
+  .home-details h3 {
+    font-size: 2.2rem;
+  }
+
+  .home-price {
+    font-size: 2.7rem;
+  }
+
+  .home-specs {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .home-specs span {
+    padding: 0;
+
+    border: 0;
+  }
+
+  .home-actions {
+    flex-direction: column;
+  }
+
+  .home-actions .btn {
+    width: 100%;
+  }
+
+
+  /* LIFESTYLE */
+
+  .lifestyle-image {
+    min-height: 430px;
+  }
+
+  .lifestyle-content {
+    padding: 70px 25px;
+  }
+
+
+  /* EXPLORE */
+
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-card {
+    min-height: 430px;
+  }
+
+
+  /* ABOUT */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .about-image,
+  .about-image img {
+    min-height: 430px;
+    height: 430px;
+  }
+
+
+  /* TESTIMONIAL */
+
+  .testimonial-section {
+    padding: 90px 0;
+  }
+
+
+  /* FINAL CTA */
+
+  .final-cta {
+    min-height: 620px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+
+  /* FOOTER */
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-bottom: 50px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   21. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .brand-text strong {
+    font-size: 1.35rem;
+  }
+
+  .brand-text span {
+    font-size: 0.55rem;
+  }
+
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+
+    font-size: 1.4rem;
+  }
+
+  .hero {
+    min-height: 690px;
+  }
+
+}
+```
 
